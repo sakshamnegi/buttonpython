@@ -1,0 +1,25 @@
+Django files 
+1. views.py
+2. templates
+3. urls.py
+	used to connect template to a function(in views.py)
+
+
+
+
+
+1. Create django project
+django-admin startproject buttonpython 	
+
+2. Paste the script in views.py with some changes. This script is run on button press
+
+3. Create template of html where the response will be shown in templates directory. Add templates directory to settings.py
+
+4. Connect the template to the button funtion(specified in views.py) using urls.py. Add the url in the html file of template
+
+
+
+TODO
+1. File selector and replace absolute path with file path. 
+2. Enter data in form and submit and send to database.
+
