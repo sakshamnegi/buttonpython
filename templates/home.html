@@ -3,11 +3,20 @@
 	<head>
 		<title>Python Button Script</title>
 	</head>
+
+
+	
 	<body>
-	<button onclick="location.href = '{% url 'scriptJson' %}'">OPT to JSON</button><hr>
-	<button onclick="location.href = '{% url 'scriptForm' %}'">OPT to Form</button><hr>
-	{% if data %}
-	{{data | safe}}
-	{% endif %}
+	<h2>Upload</h2>
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<input type="file" name="opt_file">
+		<button type="submit" onclick="location.href = '{% url 'uploadFile' %}'">upload</button>
+	</form>
+		<button onclick="location.href = '{% url 'scriptJson' %}'">OPT to JSON</button><hr>
+		<button onclick="location.href = '{% url 'scriptForm' %}'">OPT to Form</button><hr>
+		{% if data %}
+		{{data | safe}}
+		{% endif %}
 	</body>
 </html>
