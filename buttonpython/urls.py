@@ -16,13 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.button),
+    path('uploads/', views.upload, name = 'uploadFile'),
     path('json_script_output/', views.execute_scriptJson, name = 'scriptJson'),
     path('form_script_output/', views.execute_scriptForm, name = 'scriptForm'),
 ]
 #name parameter is the name of the onClick href of the button in the home.html file
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
